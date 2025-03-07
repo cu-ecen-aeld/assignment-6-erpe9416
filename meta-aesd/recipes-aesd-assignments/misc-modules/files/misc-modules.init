@@ -1,0 +1,18 @@
+case "$1" in
+    start)
+        echo "Loading faulty and hello modules"
+        /sbin/insmod /lib/modules/$(uname -r)/extra/faulty.ko
+        /sbin/insmod /lib/modules/$(uname -r)/extra/hello.ko
+        ;;
+    stop)
+        echo "Unloading faulty and hello modules"
+        /sbin/rmmod hello
+        /sbin/rmmod faulty
+        ;;
+    *)
+        echo "Improper usage"
+        exit 1
+        ;;
+esac
+
+exit 0

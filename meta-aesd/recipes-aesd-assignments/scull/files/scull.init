@@ -1,0 +1,16 @@
+case "$1" in
+    start)
+        echo "Loading scull module"
+        /sbin/insmod /lib/modules/$(uname -r)/extra/scull.ko
+        ;;
+    stop)
+        echo "Unloading scull module"
+        /sbin/rmmod scull
+        ;;
+    *)
+        echo "Improper usage"
+        exit 1
+        ;;
+esac
+
+exit 0

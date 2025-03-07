@@ -10,3 +10,7 @@ inherit extrausers
 # string
 PASSWD = "\$5\$2WoxjAdaC2\$l4aj6Is.EWkD72Vt.byhM5qRtF9HcCM/5YpbxpmvNB5"
 EXTRA_USERS_PARAMS = "usermod -p '${PASSWD}' root;"
+IMAGE_INSTALL:append = " scull misc-modules"
+IMAGE_INSTALL:append = " kernel-module-scull"
+
+
